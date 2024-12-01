@@ -45,3 +45,56 @@ void max(int a, int b)
   else
   cout<<"Maximum number is "<<b;
 }
+==============================================================================================
+Pointers
+
+#include <iostream>
+using namespace std;
+int main(void)
+{
+    int i;
+    int *iPtr;
+    iPtr = &i; // Pointer stores the address of i
+    i = 10;    // Assign value to i
+
+    // Display information
+    cout << "Value of i: " << i << endl;//Value of i: 10
+    cout << "Address of i (&i): " << &i << endl;//Address of i (&i): 0x7ffee0c71bfc
+    cout << "Value of i accessed through pointer (*iPtr): " << *iPtr << endl; //Value of i accessed through pointer (*iPtr): 10
+    cout << "Address stored in pointer (iPtr): " << iPtr << endl;//Address stored in pointer (iPtr): 0x7ffee0c71bfc
+
+
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main(void)
+{
+	int n=44;
+	int *pn;
+	cout<<"n="<<n<<endl;//n=44
+	cout<<"&n="<<&n<<endl;//&n=0x22fe3c
+	pn=&n;
+	cout<<"pn="<<pn<<endl;//pn=0x22fe3c
+	cout<<"&pn="<<&pn<<endl;//&pn=0x22fe30
+	cout<<"*pn="<<*pn<<endl;//*pn=44
+	return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main(void)
+{
+	int i, j=1;
+	int *jp1, *jp2=&j;
+	jp1=jp2;
+	i=*jp1;
+	*jp2=*jp1 + i;
+	cout<<"i="<<i<<endl;//i=1
+	cout<<"j="<<j<<endl;//j=2
+	cout<<"*jp1="<<*jp1<<endl;//*jp1=2
+	cout<<"*jp2="<<*jp2<<endl;//*jp2=2
+	return 0;
+}
+
